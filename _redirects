@@ -1,0 +1,2 @@
+# Proxy requests to the main site (avoids CORS issues)
+/proxy/*  https://nourishbyekta.in/:splat  200

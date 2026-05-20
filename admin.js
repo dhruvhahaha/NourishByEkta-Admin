@@ -14,8 +14,8 @@ let AUTH_TOKEN = null; // JWT token from Supabase Auth
 
 // Auto-detect: local dev (localhost/file) vs deployed (production domain)
 const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
-const SITE_HTML_PATH = IS_LOCAL ? '../NourishByEkta/index.html' : 'https://nourishbyekta.in/index.html';
-const SITE_IMG_BASE  = IS_LOCAL ? '../NourishByEkta/images/'    : 'https://nourishbyekta.in/images/';
+const SITE_HTML_PATH = IS_LOCAL ? '../NourishByEkta/index.html' : '/proxy/index.html';
+const SITE_IMG_BASE  = IS_LOCAL ? '../NourishByEkta/images/'    : '/proxy/images/';
 
 // ===========================
 // DEFAULT CONTENT
