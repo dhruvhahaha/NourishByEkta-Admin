@@ -1,0 +1,3 @@
+# Exclude Supabase configuration file containing credentials
+supabase-config.js
+.DS_Store

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — NourishByEkta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- Main site CSS — renders the website identically -->
+    <link rel="stylesheet" href="../NourishByEkta/style.css?v=2">
+    <!-- Admin overlay styles (loaded AFTER site CSS to override) -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <span>NourishByEkta</span>
+            </div>
+            <h1>Admin Panel</h1>
+            <p>Sign in to manage your website content</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" placeholder="admin@nourishbyekta.in" autocomplete="email">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="passwordInput" placeholder="Enter your password" autocomplete="current-password">
+                </div>
+                <p id="loginError" class="login-error"></p>
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN TOOLBAR (floating bar at top) -->
+    <div id="adminToolbar" class="admin-toolbar hidden">
+        <div class="toolbar-left">
+            <img src="images/logo.jpg" alt="Logo" class="toolbar-logo">
+            <span class="toolbar-brand-text">NourishByEkta</span>
+            <span class="toolbar-badge">EDITOR</span>
+        </div>
+        <div class="toolbar-center">
+            <div class="section-nav" id="sectionNav">
+                <button class="section-nav-btn active" data-section="hero" title="Hero">🏠 Hero</button>
+                <button class="section-nav-btn" data-section="about" title="About">👤 About</button>
+                <button class="section-nav-btn" data-section="specializations" title="Expertise">🎯 Expertise</button>
+                <button class="section-nav-btn" data-section="services" title="Services">⭐ Services</button>
+                <button class="section-nav-btn" data-section="results" title="Approach">📊 Approach</button>
+                <button class="section-nav-btn" data-section="testimonials" title="Reviews">💬 Reviews</button>
+                <button class="section-nav-btn" data-section="booking" title="Booking">📞 Booking</button>
+                <button class="section-nav-btn" data-section="faq" title="FAQ">❓ FAQ</button>
+            </div>
+            <div class="device-toggle">
+                <button class="device-btn active" data-device="desktop" title="Desktop">🖥</button>
+                <button class="device-btn" data-device="tablet" title="Tablet">📱</button>
+                <button class="device-btn" data-device="mobile" title="Mobile">📲</button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <button id="saveDraftBtn" class="toolbar-btn btn-draft">💾 Draft</button>
+            <button id="publishBtn" class="toolbar-btn btn-publish">🚀 Publish</button>
+            <button id="logoutBtn" class="toolbar-btn btn-logout-toolbar">Logout</button>
+        </div>
+    </div>
+
+    <!-- SITE WRAPPER — the actual website renders inside here -->
+    <div id="siteWrapper" class="site-wrapper hidden">
+        <div id="siteContainer" class="site-container">
+            <div class="site-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading website…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="admin-toast hidden"></div>
+
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
