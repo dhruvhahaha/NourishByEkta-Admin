@@ -311,9 +311,8 @@ function injectSiteHTML(fullHTML) {
         }
     });
 
-    // Remove the skip-nav link
-    const skipNav = body.querySelector('.skip-nav');
-    if (skipNav) skipNav.remove();
+    // Remove the skip-nav link, page-loader, and nav-backdrop (prevent overlays from blocking editor)
+    body.querySelectorAll('#page-loader, .page-loader, .skip-nav, #navBackdrop, .nav-backdrop').forEach(el => el.remove());
 
     // Inject into container
     const container = document.getElementById('siteContainer');
